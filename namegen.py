@@ -3,12 +3,14 @@ import random
 import util.names
 
 def generate_name():
-    """ Generate a fake name """
-    male_firstnames, female_firstnames, lastnames = util.names.load_all_names()
-    first = random.choice(male_firstnames)
-    last = random.choice(lastnames)
-
-    print first, last
+	""" Generate a fake name """
+	male_firstnames, female_firstnames, lastnames = util.names.load_all_names()
+	first = random.choice(male_firstnames)
+	last = random.choice(lastnames)
+	print first, last
+	base = "https://mailinator.com/inbox.jsp?to="
+	email = base + first + "." + last
+	print email
 
 def generate_phonenum():
 	""" Generate a phone number """
@@ -24,16 +26,6 @@ def generate_dob():
 	day = random.randint(1,30)
 	print year,'/',month,'/',day
 
-def throwaway_email():
-	""" Generate a throwaway email """
-	male_firstnames, female_firstnames, lastnames = util.names.load_all_names()
-	first = random.choice(male_firstnames)
-	last = random.choice(lastnames)
-	base = "https://mailinator.com/inbox.jsp?to="
-	email = base + first + "." + last
-	print email
-
 generate_name()
 generate_phonenum()
 generate_dob()
-throwaway_email()
