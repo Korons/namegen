@@ -26,6 +26,12 @@ def generate_dob():
 	day = random.randint(1,30)
 	print year,'/',month,'/',day
 
+def generate_country():
+	counties = ['USA', 'Canada', 'Mexico', 'Sweden', 'Germany', 'Italy']
+	country = random.choice(counties)
+	print country
+
 generate_name()
 generate_phonenum()
 generate_dob()
+generate_country()
