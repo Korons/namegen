@@ -1,11 +1,14 @@
 # namegen
 Generates fake data (name, DOB, phone number)
 
-## Usage 
+### Usage 
 python namegen.py 
 
-Sample output
+### Sample output
 
-WILLIE BURTON
-827 510 8215
-1975 / 8 / 1
+ANDRE GIRARD
+https://mailinator.com/inbox.jsp?to=ANDRE.GIRARD
+195 270 9226
+1994 / 10 / 24
+Ireland
+
