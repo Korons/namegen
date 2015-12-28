@@ -1,5 +1,5 @@
 # namegen
-Generates fake data (name, DOB, phone number)
+Generates fake data (name, DOB, phone number, Throw away email, country and state)
 
 ### Usage 
 python namegen.py 
