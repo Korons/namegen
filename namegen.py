@@ -1,6 +1,10 @@
 import random
 import util.names
 
+country_file = 'countries.txt'
+usa_states_file = 'usa_states.txt'
+canada_states_file = 'canada_states.txt'
+
 def generate_name():
 	""" Generate a fake name """
 	male_firstnames, female_firstnames, lastnames = util.names.load_all_names()
@@ -26,27 +30,24 @@ def generate_dob():
 	print year,'/',month,'/',day
 
 def generate_country():
-	counties = ['USA', 'Canada', 'Mexico', 'Sweden', 'Germany', 'Italy', 'Ireland', 'Netherlands', 'United Kingdom']
+	with open(country_file) as cf:
+		counties = cf.read().splitlines()
 	country = random.choice(counties)
 	if country == 'USA':
-		states = ['Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii' ,'Idaho'
-		'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri',
-		'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon',
-		'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia',
-		'Wisconsin', 'Wyoming']
+		with open(usa_states_file) as us:
+			states = us.read().splitlines()
 		state = random.choice(states)
 		print country, state
-	if country == 'Canada':
-		states = ['Alberta', 'British Columbia', 'Manitoba', 'New Brunswick', 'Newfoundland and Labrador',
-		'Northwest Territories', 'Nova Scotia', 'Nunavut', 'Ontario', 'Prince Edward Island',
-		'Quebec', 'Saskatchewan', 'Yukon']
+	elif country == 'Canada':
+		with open(canada_states_file) as cs:
+			states = cs.read().splitlines()
 		state = random.choice(states)
 		print country, state
 	else:
 		print country
 
+
 generate_name()
 generate_phonenum()
 generate_dob()
 generate_country()
-
