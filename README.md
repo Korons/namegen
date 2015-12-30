@@ -12,13 +12,10 @@ Will generate random data with female first names
 
 ### Sample output
 
-ANDRE GIRARD
-
-https://mailinator.com/inbox.jsp?to=ANDRE.GIRARD
-
-195 270 9226
-
-1994 / 10 / 24
-
-Ireland
-
+```ANDREW GOODMAN 
+https://mailinator.com/inbox.jsp?to=ANDREW.GOODMAN 
+ANGO
+673 437 7846
+1980 / 12 / 11
+Italy
+```
