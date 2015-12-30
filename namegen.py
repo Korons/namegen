@@ -3,6 +3,7 @@ import argparse
 
 parser = argparse.ArgumentParser(description='Generate fake data')
 parser.add_argument("-n", help="Use female names", choices=['male','female'])
+parser.add_argument("-o",help="Output to csv file",)
 args = parser.parse_args()
 
 
@@ -24,24 +25,51 @@ def generate_name():
 		lastname = ln.read().splitlines()
 	first = random.choice(fn)
 	last = random.choice(lastname)
-	print first, last
-	base = "https://mailinator.com/inbox.jsp?to="
-	email = base + first + "." + last
-	print email
+	if args.o:
+		f = open(args.o,"a")
+		f.write(first)
+		f.write(';')
+		f.write(last)
+		f.write(';')
+		f.close
+	else:
+		print first, last
+		base = "https://mailinator.com/inbox.jsp?to="
+		email = base + first + "." + last
+		print email
 
 def generate_phonenum():
 	""" Generate a phone number """
 	phone_first = random.randint(100,999)
 	phone_second = random.randint(100,999)
 	phone_third = random.randint(1000,9999)
-	print  phone_first, phone_second, phone_third
+	if args.o:
+		f = open(args.o,"a")
+		f.write(str(phone_first))
+		f.write(str(phone_second))
+		f.write(str(phone_third))
+		f.write(';')
+		f.close
+	else:
+		print  phone_first, phone_second, phone_third
 
 def generate_dob():
 	""" Generate date of birth """
 	year = random.randint(1950,2000)
 	month = random.randint(1,12)
 	day = random.randint(1,30)
-	print year,'/',month,'/',day
+	if args.o:
+		f = open(args.o,"a")
+		f.write(str(day))
+		f.write(';')
+		f.write(str(month))
+		f.write(';')
+		f.write(str(year))
+		f.write(';')
+		f.close
+
+	else:
+		print year,'/',month,'/',day
 
 def generate_country():
 	with open(country_file) as cf:
@@ -51,14 +79,38 @@ def generate_country():
 		with open(usa_states_file) as us:
 			states = us.read().splitlines()
 		state = random.choice(states)
-		print country, state
+		if args.o:
+			f = open(args.o,"a")
+			f.write(country)
+			f.write(';')
+			f.write(state)
+			f.write(';')
+			f.write('\n')
+			f.close
+		else:
+			print country, state
 	elif country == 'Canada':
 		with open(canada_states_file) as cs:
 			states = cs.read().splitlines()
 		state = random.choice(states)
-		print country, state
+		if args.o:
+			f = open(args.o,"a")
+			f.write(country)
+			f.write(';')
+			f.write(state)
+			f.write(';')
+			f.write('\n')
+			f.close
+		else:
+			print country, state
 	else:
-		print country
+		if args.o:
+			f = open(args.o,"a")
+			f.write(country)
+			f.write('\n')
+			f.close
+		else:
+			print country
 
 
 generate_name()
