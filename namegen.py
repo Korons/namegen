@@ -1,15 +1,29 @@
 import random
-import util.names
+import argparse
+
+parser = argparse.ArgumentParser(description='Generate fake data')
+parser.add_argument("-n", help="Use female names", choices=['male','female'])
+args = parser.parse_args()
+
 
 country_file = 'countries.txt'
 usa_states_file = 'usa_states.txt'
 canada_states_file = 'canada_states.txt'
-
+male_names = 'male-first.txt'
+female_names = 'female-first.txt'
+last_names = 'lastnames.txt'
 def generate_name():
 	""" Generate a fake name """
-	male_firstnames, female_firstnames, lastnames = util.names.load_all_names()
-	first = random.choice(male_firstnames)
-	last = random.choice(lastnames)
+	if args.n == 'female':
+		with open(female_names) as fen:
+			fn = fen.read().splitlines()
+	else:
+		with open(male_names) as mn:
+			fn = mn.read().splitlines()
+	with open(last_names) as ln:
+		lastname = ln.read().splitlines()
+	first = random.choice(fn)
+	last = random.choice(lastname)
 	print first, last
 	base = "https://mailinator.com/inbox.jsp?to="
 	email = base + first + "." + last
@@ -17,9 +31,9 @@ def generate_name():
 
 def generate_phonenum():
 	""" Generate a phone number """
-	phone_first = random.randint(111,999)
-	phone_second = random.randint(111,999)
-	phone_third = random.randint(1111,9999)
+	phone_first = random.randint(100,999)
+	phone_second = random.randint(100,999)
+	phone_third = random.randint(1000,9999)
 	print  phone_first, phone_second, phone_third
 
 def generate_dob():
