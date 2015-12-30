@@ -3,7 +3,7 @@ import argparse
 
 parser = argparse.ArgumentParser(description='Generate fake data')
 parser.add_argument("-n", help="Use female names", choices=['male','female'])
-parser.add_argument("-o",help="Output to csv file",)
+parser.add_argument("-o",help="Output to csv file")
 args = parser.parse_args()
 
 
@@ -37,7 +37,12 @@ def generate_name():
 		base = "https://mailinator.com/inbox.jsp?to="
 		email = base + first + "." + last
 		print email
-
+		user_name_how = random.randint(1, 2)
+		if user_name_how == 1:
+			user_name = first[0] + last
+		elif user_name_how == 2:
+			user_name = first[0:2] + last[0:2]
+		print user_name
 def generate_phonenum():
 	""" Generate a phone number """
 	phone_first = random.randint(100,999)
