@@ -37,12 +37,24 @@ def generate_name():
 		base = "https://mailinator.com/inbox.jsp?to="
 		email = base + first + "." + last
 		print email
-		user_name_how = random.randint(1, 2)
+		# I'm using a bunch of if/elif for this because python does not have a switch statment
+		user_name_how = random.randint(1, 7)
 		if user_name_how == 1:
 			user_name = first[0] + last
 		elif user_name_how == 2:
 			user_name = first[0:2] + last[0:2]
+		elif user_name_how == 3:
+			user_name = first[2:5] + last[0:5]
+		elif user_name_how == 4:
+			user_name = first[1:2] + last
+		elif user_name_how == 5:
+			user_name = first[0:2] + first[3:4]
+		elif user_name_how == 6:
+			user_name = last[0:2] + last[1]
+		elif user_name_how == 7:
+			user_name = first[2:4] + last[0:3]
 		print user_name
+
 def generate_phonenum():
 	""" Generate a phone number """
 	phone_first = random.randint(100,999)
@@ -122,3 +134,4 @@ generate_name()
 generate_phonenum()
 generate_dob()
 generate_country()
+
