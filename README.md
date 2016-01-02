@@ -10,6 +10,10 @@ Will generate data with male or female first names
 
 Will generate data with the country as USA
 
+```python namegen.py -l 10```
+
+Will run the program 10 times
+
 ```python namegen.py -n female ```
 
 Will generate data with female first names
