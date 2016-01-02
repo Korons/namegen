@@ -8,6 +8,7 @@ parser.add_argument("-n", help="Use female names", choices=['male','female'])
 parser.add_argument("-o", help="Output to csv file")
 parser.add_argument("-c", help="Country")
 parser.add_argument("-y", help="Year range Ex 1950-1970")
+parser.add_argument("-l", help="The number of times to loop")
 args = parser.parse_args()
 
 # The files with all the countries 
@@ -187,4 +188,12 @@ generate_phonenum()
 generate_dob()
 generate_country()
 
+if args.l:
+	run_range = args.l
+	# we start at 1 and 0 here because we already ran once above this
+	for x in range(1, int(run_range)):
+		generate_name()
+		generate_phonenum()
+		generate_dob()
+		generate_country()
 
