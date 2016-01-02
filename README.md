@@ -32,7 +32,7 @@ Will generate data with a data range of 1950 to 2000
 
 ### Sample output
 
-Kirstin Hirstin 
+Kirstin Hirstin                                                                     
 https://mailinator.com/inbox.jsp?to=Kirstin.Hirstin                                                                             
 Kirstin2L911T                                                                                                                  
 934 418 3290                                                                                                                  
