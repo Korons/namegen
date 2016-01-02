@@ -1,25 +1,32 @@
 # namegen
-Generates fake data (name, DOB, phone number, Throw away email, country and state)
+Generates fake data (name, username, DOB, phone number, Throw away email, country and state)
 
 ### Usage 
 ```python namegen.py ```
 
 Will generate random data with male first names
 
+```python namegen.py -c USA```
+
+Will generate data with the country as USA
+
 ```python namegen.py -n female ```
 
 Will generate random data with female first names
 
+```python namegen.py -o file```
+
+Will write the data generated in csv format to a file named file
+
+```python namegen.py -y 1950-2000```
+
+Will generate random data with a data range of 1950 to 2000
+
 ### Sample output
 
-ANDREW GOODMAN 
-
-https://mailinator.com/inbox.jsp?to=ANDREW.GOODMAN 
-
-ANGO
-
-673 437 7846
-
-1980 / 12 / 11
-
-Italy
+Kirstin Hirstin
+https://mailinator.com/inbox.jsp?to=Kirstin.Hirstin
+Kirstin2L911T
+934 418 3290
+2000 / 12 / 30
+USA Michigan
