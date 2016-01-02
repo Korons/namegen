@@ -139,11 +139,11 @@ def generate_dob():
 		print year,'/',month,'/',day
 
 def generate_country():
-	with open(country_file) as cf:
-		counties = cf.read().splitlines()
 	if args.c:
 		country = args.c
 	else:
+		with open(country_file) as cf:
+			counties = cf.read().splitlines()
 		country = random.choice(counties)
 	if country == 'USA':
 		with open(usa_states_file) as us:
