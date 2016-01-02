@@ -6,15 +6,21 @@ parser.add_argument("-n", help="Use female names", choices=['male','female'])
 parser.add_argument("-o",help="Output to csv file")
 args = parser.parse_args()
 
-
+# The files with all the countries 
 country_file = 'countries.txt'
+# A file with all the states in the USA
 usa_states_file = 'usa_states.txt'
+# Al the states in canada
 canada_states_file = 'canada_states.txt'
+# A file of all the male names you want to choose from
 male_names = 'male-first.txt'
+# A file of all the female names you want to choose from
 female_names = 'female-first.txt'
+# A file with all the lastnames you want to choose from
 last_names = 'lastnames.txt'
+
+# This generates the name, email and username
 def generate_name():
-	""" Generate a fake name """
 	if args.n == 'female':
 		with open(female_names) as fen:
 			fn = fen.read().splitlines()
@@ -25,6 +31,7 @@ def generate_name():
 		lastname = ln.read().splitlines()
 	first = random.choice(fn)
 	last = random.choice(lastname)
+	# This if is for writing to a csv file
 	if args.o:
 		f = open(args.o,"a")
 		f.write(first)
@@ -38,7 +45,7 @@ def generate_name():
 		email = base + first + "." + last
 		print email
 		# I'm using a bunch of if/elif for this because python does not have a switch statment
-		user_name_how = random.randint(1, 7)
+		user_name_how = random.randint(1, 8)
 		if user_name_how == 1:
 			user_name = first[0] + last
 		elif user_name_how == 2:
@@ -53,8 +60,14 @@ def generate_name():
 			user_name = last[0:2] + last[1]
 		elif user_name_how == 7:
 			user_name = first[2:4] + last[0:3]
+		elif user_name_how == 8:
+			numbs = random.randint(10, 100)
+			numbs = str(numbs)
+			user_name = first[0] + last + " " + numbs
+			user_name = user_name.replace(" ", "")
 		print user_name
 
+# This generates the phone number
 def generate_phonenum():
 	""" Generate a phone number """
 	phone_first = random.randint(100,999)
@@ -134,4 +147,3 @@ generate_name()
 generate_phonenum()
 generate_dob()
 generate_country()
-
