@@ -27,12 +27,24 @@ last_names = 'lastnames.txt'
 def generate_name():
 	char_set = string.ascii_uppercase + string.digits
 	randstring = ''.join(random.sample(char_set*6, 6))
+	
 	if args.n == 'female':
 		with open(female_names) as fen:
 			fn = fen.read().splitlines()
-	else:
+	elif args.n =='male':
 		with open(male_names) as mn:
 			fn = mn.read().splitlines()
+	else:
+		morf = random.randint(1,2)
+		if morf == 1:
+			with open(male_names) as mn:
+				fn = mn.read().splitlines()
+		elif morf == 2:
+			with open(female_names) as fen:
+				fn = fen.read().splitlines()
+		else:
+			print "Error: Unexpected vaule in generate_name\nExiting"
+			sys.exit()
 	with open(last_names) as ln:
 		lastname = ln.read().splitlines()
 	first = random.choice(fn)
@@ -80,7 +92,7 @@ def generate_name():
 		elif user_name_how == 9:
 			user_name = first + randstring
 		else:
-			print "Error: Unexpected vaule line 48\nExiting"
+			print "Error: Unexpected vaule in generate_name\nExiting"
 			sys.exit()
 		print user_name
 
@@ -174,4 +186,5 @@ generate_name()
 generate_phonenum()
 generate_dob()
 generate_country()
+
 
