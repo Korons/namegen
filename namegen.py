@@ -7,6 +7,7 @@ parser = argparse.ArgumentParser(description='Generate fake data')
 parser.add_argument("-n", help="Use female names", choices=['male','female'])
 parser.add_argument("-o", help="Output to csv file")
 parser.add_argument("-c", help="Country")
+parser.add_argument("-y", help="Year range Ex 1950-1970")
 args = parser.parse_args()
 
 # The files with all the countries 
@@ -101,7 +102,14 @@ def generate_phonenum():
 
 def generate_dob():
 	""" Generate date of birth """
-	year = random.randint(1950,2000)
+	if args.y:
+		year_range = args.y
+		# This is weird. Shouldn't it be 0:3 and 5:9? because the list should start at 0 and end at 3 which would be 4 numbers
+		range_1 = year_range[0:4]
+		range_2 = year_range[5:9]
+		year = random.randint(int(range_1), int(range_2))
+	else:
+		year = random.randint(1950,2000)
 	month = random.randint(1,12)
 	day = random.randint(1,30)
 	if args.o:
@@ -166,3 +174,4 @@ generate_name()
 generate_phonenum()
 generate_dob()
 generate_country()
+
