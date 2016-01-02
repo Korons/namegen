@@ -1,5 +1,6 @@
 import random
 import argparse
+import sys
 
 parser = argparse.ArgumentParser(description='Generate fake data')
 parser.add_argument("-n", help="Use female names", choices=['male','female'])
@@ -65,6 +66,9 @@ def generate_name():
 			numbs = str(numbs)
 			user_name = first[0] + last + " " + numbs
 			user_name = user_name.replace(" ", "")
+		else:
+			print "Error: Unexpected vaule line 48\nExiting"
+			sys.exit()
 		print user_name
 
 # This generates the phone number
