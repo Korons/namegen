@@ -1,10 +1,12 @@
 import random
 import argparse
 import sys
+import string
 
 parser = argparse.ArgumentParser(description='Generate fake data')
 parser.add_argument("-n", help="Use female names", choices=['male','female'])
-parser.add_argument("-o",help="Output to csv file")
+parser.add_argument("-o", help="Output to csv file")
+parser.add_argument("-c", help="Country")
 args = parser.parse_args()
 
 # The files with all the countries 
@@ -22,6 +24,8 @@ last_names = 'lastnames.txt'
 
 # This generates the name, email and username
 def generate_name():
+	char_set = string.ascii_uppercase + string.digits
+	randstring = ''.join(random.sample(char_set*6, 6))
 	if args.n == 'female':
 		with open(female_names) as fen:
 			fn = fen.read().splitlines()
@@ -32,6 +36,12 @@ def generate_name():
 		lastname = ln.read().splitlines()
 	first = random.choice(fn)
 	last = random.choice(lastname)
+	#Changes the names to lower case
+	first = first.lower()
+	last = last.lower()
+	#Caps the first letter of each name
+	first = first[:1].upper() + first[1:]
+	last = last[:1].upper() + first[1:]
 	# This if is for writing to a csv file
 	if args.o:
 		f = open(args.o,"a")
@@ -46,7 +56,7 @@ def generate_name():
 		email = base + first + "." + last
 		print email
 		# I'm using a bunch of if/elif for this because python does not have a switch statment
-		user_name_how = random.randint(1, 8)
+		user_name_how = random.randint(1, 9)
 		if user_name_how == 1:
 			user_name = first[0] + last
 		elif user_name_how == 2:
@@ -66,6 +76,8 @@ def generate_name():
 			numbs = str(numbs)
 			user_name = first[0] + last + " " + numbs
 			user_name = user_name.replace(" ", "")
+		elif user_name_how == 9:
+			user_name = first + randstring
 		else:
 			print "Error: Unexpected vaule line 48\nExiting"
 			sys.exit()
@@ -108,7 +120,10 @@ def generate_dob():
 def generate_country():
 	with open(country_file) as cf:
 		counties = cf.read().splitlines()
-	country = random.choice(counties)
+	if args.c:
+		country = args.c
+	else:
+		country = random.choice(counties)
 	if country == 'USA':
 		with open(usa_states_file) as us:
 			states = us.read().splitlines()
