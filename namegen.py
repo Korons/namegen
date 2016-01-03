@@ -13,7 +13,7 @@ args = parser.parse_args()
 
 #Gobal vars
 
-state = 'the'
+state = ''
 
 
 # The files with all the countries 
@@ -174,10 +174,46 @@ def generate_country():
 
 # This generates the phone number
 def generate_phonenum():
-	ala_codes = [205, 251, 256, 334, 938]
-	print state
+	alab_codes = [205, 251, 256, 334, 938]
+	alas_codes = 907
+	ariz_codes = [480, 520, 602, 623, 928]
+	arka_codes = [479, 501, 870]
+	cali_codes = [209, 213, 310, 323, 408, 415, 424, 442, 510, 530, 559, 562, 619, 626, 650, 657, 661, 669, 707, 714, 747, 760, 805, 818, 831, 858, 909, 916, 925, 949, 951]
+	colo_codes = [303, 719, 720, 970]
+	conn_codes = [203, 475, 860]
+	dela_codes = [302]
+	flor_codes = [239, 305, 321, 352, 386, 407, 561, 727, 754, 772, 786, 813, 850, 863, 904, 941, 954]
+	gero_codes = [229, 404, 470, 478, 678, 706, 762, 770, 912]
+	hawa_codes = [808]
+	idah_codes = [208]
+	illi_codes = [217, 224, 309, 312, 331, 618, 630, 708, 773, 779, 815, 847, 872]
+	indi_codes = [219, 260, 317, 574, 765, 812]
+	iowa_codes = [319, 515, 563, 641, 712]
+	kans_codes = [316, 620, 785, 913]
+	kent_codes = [270, 502, 606, 859]
+	loui_codes = [225, 318, 337, 504, 985]
+	main_codes = [207]
+	mary_codes = [240, 301, 410, 443, 667]
+	mass_codes = [339, 351, 413, 508, 617, 774, 781, 857, 978]
+	mich_codes = [231, 248, 269, 313, 517, 586, 616, 734, 810, 906, 947, 989]
 	if state == "Alabama":
-		phone_first = random.choice(ala_codes)
+		phone_first = random.choice(alab_codes)
+	elif state == "Alaska":
+		phone_first = random.choice(alas_codes)
+	elif state == "Arizona":
+		phone_first = random.choice(ariz_codes)
+	elif state == "Arkansas":
+		phone_first = random.choice(arka_codes)
+	elif state == "California":
+		phone_first = random.choice(cali_codes)
+	elif state == "Colorado":
+		phone_first = random.choice(colo_codes)
+	elif state == "Connecticut":
+		phone_first = random.choice(conn_codes)
+	elif state == "Delaware":
+		phone_first = random.choice(dela_codes)
+	elif state == "Florida":
+		phone_first = random.choice(flor_codes)
 	else:
 		phone_first = random.randint(100,999)
 	phone_second = random.randint(100,999)
