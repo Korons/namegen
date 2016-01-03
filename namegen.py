@@ -11,11 +11,16 @@ parser.add_argument("-y", help="Year range Ex 1950-1970")
 parser.add_argument("-l", help="The number of times to loop")
 args = parser.parse_args()
 
+#Gobal vars
+
+state = 'the'
+
+
 # The files with all the countries 
 country_file = 'countries.txt'
 # A file with all the states in the USA
 usa_states_file = 'usa_states.txt'
-# Al the states in canada
+# All the states in canada
 canada_states_file = 'canada_states.txt'
 # A file of all the male names you want to choose from
 male_names = 'male-first.txt'
@@ -97,24 +102,8 @@ def generate_name():
 			sys.exit()
 		print user_name
 
-# This generates the phone number
-def generate_phonenum():
-	""" Generate a phone number """
-	phone_first = random.randint(100,999)
-	phone_second = random.randint(100,999)
-	phone_third = random.randint(1000,9999)
-	if args.o:
-		f = open(args.o,"a")
-		f.write(str(phone_first))
-		f.write(str(phone_second))
-		f.write(str(phone_third))
-		f.write(';')
-		f.close
-	else:
-		print  phone_first, phone_second, phone_third
 
 def generate_dob():
-	""" Generate date of birth """
 	if args.y:
 		year_range = args.y
 		# This is weird. Shouldn't it be 0:3 and 5:9? because the list should start at 0 and end at 3 which would be 4 numbers
@@ -138,7 +127,7 @@ def generate_dob():
 	else:
 		print year,'/',month,'/',day
 
-def generate_country():
+def generate_country():	
 	if args.c:
 		country = args.c
 	else:
@@ -148,6 +137,7 @@ def generate_country():
 	if country == 'USA':
 		with open(usa_states_file) as us:
 			states = us.read().splitlines()
+		global state
 		state = random.choice(states)
 		if args.o:
 			f = open(args.o,"a")
@@ -182,11 +172,30 @@ def generate_country():
 		else:
 			print country
 
+# This generates the phone number
+def generate_phonenum():
+	ala_codes = [205, 251, 256, 334, 938]
+	print state
+	if state == "Alabama":
+		phone_first = random.choice(ala_codes)
+	else:
+		phone_first = random.randint(100,999)
+	phone_second = random.randint(100,999)
+	phone_third = random.randint(1000,9999)
+	if args.o:
+		f = open(args.o,"a")
+		f.write(str(phone_first))
+		f.write(str(phone_second))
+		f.write(str(phone_third))
+		f.write(';')
+		f.close
+	else:
+		print  phone_first, phone_second, phone_third
 
 generate_name()
-generate_phonenum()
 generate_dob()
 generate_country()
+generate_phonenum()
 
 if args.l:
 	run_range = args.l
@@ -196,4 +205,3 @@ if args.l:
 		generate_phonenum()
 		generate_dob()
 		generate_country()
-
