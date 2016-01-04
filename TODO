@@ -9,3 +9,4 @@ Add city
 Add middle name
 Make phone number match country/state <--- USA done
 Added looping <--- done
+Write tool to test data (make sure area code matches state and state matches country)
