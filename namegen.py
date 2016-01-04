@@ -33,7 +33,6 @@ last_names = 'lastnames.txt'
 def generate_name():
 	char_set = string.ascii_uppercase + string.digits
 	randstring = ''.join(random.sample(char_set*6, 6))
-	
 	if args.n == 'female':
 		with open(female_names) as fen:
 			fn = fen.read().splitlines()
@@ -214,6 +213,30 @@ def generate_phonenum():
 		phone_first = random.choice(dela_codes)
 	elif state == "Florida":
 		phone_first = random.choice(flor_codes)
+	elif state == "Georgia":
+		phone_first = random.choice(gero_codes)
+	elif state == "Hawaii":
+		phone_first = random.choice(hawa_codes)
+	elif state == "Idaho":
+		phone_first = random.choice(idah_codes)
+	elif state == "Illinois":
+		phone_first = random.choice(illi_codes)
+	elif state == "Indiana":
+		phone_first = random.choice(indi_codes)
+	elif state == "Iowa":
+		phone_first = random.choice(iowa_codes)
+	elif state == "Kansas":
+		phone_first = random.choice(kans_codes)
+	elif state == "Kentucky":
+		phone_first = random.choice(kent_codes)
+	elif state == "Louisiana":
+		phone_first = random.choice(loui_codes)
+	elif state == "Maine":
+		phone_first = random.choice(main_codes)
+	elif state == "Maryland":
+		phone_first = random.choice(mary_codes)
+	elif state == "Massachusetts":
+		phone_first = random.choice(mass_codes)
 	else:
 		phone_first = random.randint(100,999)
 	phone_second = random.randint(100,999)
