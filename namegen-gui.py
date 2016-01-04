@@ -23,16 +23,16 @@ last_names = 'lastnames.txt'
 @Gooey      
 def main():
   parser = GooeyParser(description='Generate fake data')
-  parser.add_argument("-n", help="Use male or female names", choices=['male','female'])
+  parser.add_argument("-n", help="Use male or female names", choices=['Male','Female'])
   parser.add_argument("-o", help="Output to csv file")
   parser.add_argument("-c", help="Country")
   parser.add_argument("-y", help="Year range Ex 1950-1970")
   args = parser.parse_args()
   
-  if args.n == 'female':
+  if args.n == 'Female':
     with open(female_names) as fen:
       fn = fen.read().splitlines()
-  elif args.n =='male':
+  elif args.n =='Male':
     with open(male_names) as mn:
       fn = mn.read().splitlines()
   else:
