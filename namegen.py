@@ -174,7 +174,7 @@ def generate_country():
 # This generates the phone number
 def generate_phonenum():
 	alab_codes = [205, 251, 256, 334, 938]
-	alas_codes = 907
+	alas_codes = [907]
 	ariz_codes = [480, 520, 602, 623, 928]
 	arka_codes = [479, 501, 870]
 	cali_codes = [209, 213, 310, 323, 408, 415, 424, 442, 510, 530, 559, 562, 619, 626, 650, 657, 661, 669, 707, 714, 747, 760, 805, 818, 831, 858, 909, 916, 925, 949, 951]
@@ -195,6 +195,35 @@ def generate_phonenum():
 	mary_codes = [240, 301, 410, 443, 667]
 	mass_codes = [339, 351, 413, 508, 617, 774, 781, 857, 978]
 	mich_codes = [231, 248, 269, 313, 517, 586, 616, 734, 810, 906, 947, 989]
+	minn_codes = [218, 320, 507, 612, 651, 763, 952]
+	miss_codes = [228, 601, 662, 769]
+	misso_codes = [314, 417, 573, 636, 660, 816]
+	mont_codes = [406]
+	nebr_codes = [308, 402, 531]
+	neva_codes = [702, 725, 775]
+	nham_codes = [603]
+	njer_codes = [201, 551, 609, 732, 848, 856, 862, 908, 973]
+	nmex_codes = [505, 575]
+	nyor_codes = [212, 315, 347, 516, 518, 585, 607, 631, 646, 716, 718, 845, 914, 917, 929]
+	ncar_codes = [252, 336, 704, 828, 910, 919, 980, 984]
+	ndak_codes = [701]
+	ohio_codes = [216, 234, 330, 419, 440, 513, 567, 614, 740, 937]
+	okla_codes = [405, 539, 580, 918]
+	oreg_codes = [458, 503, 541, 971]
+	penn_codes = [215, 267, 272, 412, 484, 570, 610, 717, 724, 814, 878]
+	risl_codes = [401]
+	scar_codes = [803, 843, 864]
+	sdak_codes = [605]
+	tenn_codes = [423, 615, 731, 865, 901, 931]
+	texa_codes = [210, 214, 254, 281, 325, 346, 361, 409, 430, 432, 469, 512, 682, 713, 737, 806, 817, 830, 832, 903, 915, 936, 940, 956, 972, 979]
+	utah_codes = [385, 435, 801]
+	verm_codes = [802]
+	virg_codes = [276, 434, 540, 571, 703, 757, 804]
+	wash_codes = [206, 253, 360, 425, 509]
+	wads_codes = [202]
+	wvir_codes = [304, 681]
+	wisc_codes = [262, 414, 534, 608, 715, 920]
+	wyom_codes = [307]
 	if state == "Alabama":
 		phone_first = random.choice(alab_codes)
 	elif state == "Alaska":
@@ -237,6 +266,67 @@ def generate_phonenum():
 		phone_first = random.choice(mary_codes)
 	elif state == "Massachusetts":
 		phone_first = random.choice(mass_codes)
+	elif state == "Michigan":
+		phone_first = random.choice(mich_codes)
+	elif state == "Minnesota":
+		phone_first = random.choice(minn_codes)
+	elif state == "Mississippi":
+		phone_first = random.choice(miss_codes)
+	elif state == "Missouri":
+		phone_first = random.choice(misso_codes)
+	elif state == "Montana":
+		phone_first = random.choice(mont_codes)
+	elif state == "Nebraska":
+		phone_first = random.choice(nebr_codes)
+	elif state == "Nevada":
+		phone_first = random.choice(neva_codes)
+	elif state == "New Hampshire":
+		phone_first = random.choice(nham_codes)
+	elif state == "New Jersey":
+		phone_first = random.choice(njer_codes)
+	elif state == "New Mexico":
+		phone_first = random.choice(nmex_codes)
+	elif state == "New York":
+		phone_first = random.choice(nyor_codes)
+	elif state == "North Carolina":
+		phone_first = random.choice(ncar_codes)
+	elif state == "North Dakota":
+		phone_first = random.choice(ndak_codes)
+	elif state == "Ohio":
+		phone_first = random.choice(ohio_codes)
+	elif state == "Oklahoma":
+		phone_first = random.choice(okla_codes)
+	elif state == "Oregon":
+		phone_first = random.choice(oreg_codes)
+	elif state == "Pennsylvania":
+		phone_first = random.choice(penn_codes)
+	elif state == "Rhode Island":
+		phone_first = random.choice(risl_codes)
+	elif state == "South Carolina":
+		phone_first = random.choice(scar_codes)
+	elif state == "South Dakota":
+		phone_first = random.choice(sdak_codes)
+	elif state == "Tennessee":
+		phone_first = random.choice(tenn_codes)
+	elif state == "Texas":
+		phone_first = random.choice(texa_codes)
+	elif state == "Utah":
+		phone_first = random.choice(utah_codes)
+	elif state == "Vermont":
+		phone_first = random.choice(verm_codes)
+	elif state == "Virginia":
+		phone_first = random.choice(virg_codes)
+	elif state == "Washington":
+		phone_first = random.choice(wash_codes)
+	elif state == "Washington, DC":
+		phone_first = random.choice(wads_codes)
+	elif state == "West Virginia":
+		phone_first = random.choice(wvir_codes)
+	elif state == "Wisconsin":
+		phone_first = random.choice(wisc_codes)
+	elif state == "Wyoming":
+		phone_first = random.choice(wyom_codes)
+
 	else:
 		phone_first = random.randint(100,999)
 	phone_second = random.randint(100,999)
