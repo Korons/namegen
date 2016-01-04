@@ -174,159 +174,199 @@ def generate_country():
 
 # This generates the phone number
 def generate_phonenum():
-	alab_codes = [205, 251, 256, 334, 938]
-	alas_codes = [907]
-	ariz_codes = [480, 520, 602, 623, 928]
-	arka_codes = [479, 501, 870]
-	cali_codes = [209, 213, 310, 323, 408, 415, 424, 442, 510, 530, 559, 562, 619, 626, 650, 657, 661, 669, 707, 714, 747, 760, 805, 818, 831, 858, 909, 916, 925, 949, 951]
-	colo_codes = [303, 719, 720, 970]
-	conn_codes = [203, 475, 860]
-	dela_codes = [302]
-	flor_codes = [239, 305, 321, 352, 386, 407, 561, 727, 754, 772, 786, 813, 850, 863, 904, 941, 954]
-	gero_codes = [229, 404, 470, 478, 678, 706, 762, 770, 912]
-	hawa_codes = [808]
-	idah_codes = [208]
-	illi_codes = [217, 224, 309, 312, 331, 618, 630, 708, 773, 779, 815, 847, 872]
-	indi_codes = [219, 260, 317, 574, 765, 812]
-	iowa_codes = [319, 515, 563, 641, 712]
-	kans_codes = [316, 620, 785, 913]
-	kent_codes = [270, 502, 606, 859]
-	loui_codes = [225, 318, 337, 504, 985]
-	main_codes = [207]
-	mary_codes = [240, 301, 410, 443, 667]
-	mass_codes = [339, 351, 413, 508, 617, 774, 781, 857, 978]
-	mich_codes = [231, 248, 269, 313, 517, 586, 616, 734, 810, 906, 947, 989]
-	minn_codes = [218, 320, 507, 612, 651, 763, 952]
-	miss_codes = [228, 601, 662, 769]
-	misso_codes = [314, 417, 573, 636, 660, 816]
-	mont_codes = [406]
-	nebr_codes = [308, 402, 531]
-	neva_codes = [702, 725, 775]
-	nham_codes = [603]
-	njer_codes = [201, 551, 609, 732, 848, 856, 862, 908, 973]
-	nmex_codes = [505, 575]
-	nyor_codes = [212, 315, 347, 516, 518, 585, 607, 631, 646, 716, 718, 845, 914, 917, 929]
-	ncar_codes = [252, 336, 704, 828, 910, 919, 980, 984]
-	ndak_codes = [701]
-	ohio_codes = [216, 234, 330, 419, 440, 513, 567, 614, 740, 937]
-	okla_codes = [405, 539, 580, 918]
-	oreg_codes = [458, 503, 541, 971]
-	penn_codes = [215, 267, 272, 412, 484, 570, 610, 717, 724, 814, 878]
-	risl_codes = [401]
-	scar_codes = [803, 843, 864]
-	sdak_codes = [605]
-	tenn_codes = [423, 615, 731, 865, 901, 931]
-	texa_codes = [210, 214, 254, 281, 325, 346, 361, 409, 430, 432, 469, 512, 682, 713, 737, 806, 817, 830, 832, 903, 915, 936, 940, 956, 972, 979]
-	utah_codes = [385, 435, 801]
-	verm_codes = [802]
-	virg_codes = [276, 434, 540, 571, 703, 757, 804]
-	wash_codes = [206, 253, 360, 425, 509]
-	wads_codes = [202]
-	wvir_codes = [304, 681]
-	wisc_codes = [262, 414, 534, 608, 715, 920]
-	wyom_codes = [307]
+	alab_codes_usa = [205, 251, 256, 334, 938]
+	alas_codes_usa = [907]
+	ariz_codes_usa = [480, 520, 602, 623, 928]
+	arka_codes_usa = [479, 501, 870]
+	cali_codes_usa = [209, 213, 310, 323, 408, 415, 424, 442, 510, 530, 559, 562, 619, 626, 650, 657, 661, 669, 707, 714, 747, 760, 805, 818, 831, 858, 909, 916, 925, 949, 951]
+	colo_codes_usa = [303, 719, 720, 970]
+	conn_codes_usa = [203, 475, 860]
+	dela_codes_usa = [302]
+	flor_codes_usa = [239, 305, 321, 352, 386, 407, 561, 727, 754, 772, 786, 813, 850, 863, 904, 941, 954]
+	gero_codes_usa = [229, 404, 470, 478, 678, 706, 762, 770, 912]
+	hawa_codes_usa = [808]
+	idah_codes_usa = [208]
+	illi_codes_usa = [217, 224, 309, 312, 331, 618, 630, 708, 773, 779, 815, 847, 872]
+	indi_codes_usa = [219, 260, 317, 574, 765, 812]
+	iowa_codes_usa = [319, 515, 563, 641, 712]
+	kans_codes_usa = [316, 620, 785, 913]
+	kent_codes_usa = [270, 502, 606, 859]
+	loui_codes_usa = [225, 318, 337, 504, 985]
+	main_codes_usa = [207]
+	mary_codes_usa = [240, 301, 410, 443, 667]
+	mass_codes_usa = [339, 351, 413, 508, 617, 774, 781, 857, 978]
+	mich_codes_usa = [231, 248, 269, 313, 517, 586, 616, 734, 810, 906, 947, 989]
+	minn_codes_usa = [218, 320, 507, 612, 651, 763, 952]
+	miss_codes_usa = [228, 601, 662, 769]
+	misso_codes_usa = [314, 417, 573, 636, 660, 816]
+	mont_codes_usa = [406]
+	nebr_codes_usa = [308, 402, 531]
+	neva_codes_usa = [702, 725, 775]
+	nham_codes_usa = [603]
+	njer_codes_usa = [201, 551, 609, 732, 848, 856, 862, 908, 973]
+	nmex_codes_usa = [505, 575]
+	nyor_codes_usa = [212, 315, 347, 516, 518, 585, 607, 631, 646, 716, 718, 845, 914, 917, 929]
+	ncar_codes_usa = [252, 336, 704, 828, 910, 919, 980, 984]
+	ndak_codes_usa = [701]
+	ohio_codes_usa = [216, 234, 330, 419, 440, 513, 567, 614, 740, 937]
+	okla_codes_usa = [405, 539, 580, 918]
+	oreg_codes_usa = [458, 503, 541, 971]
+	penn_codes_usa = [215, 267, 272, 412, 484, 570, 610, 717, 724, 814, 878]
+	risl_codes_usa = [401]
+	scar_codes_usa = [803, 843, 864]
+	sdak_codes_usa = [605]
+	tenn_codes_usa = [423, 615, 731, 865, 901, 931]
+	texa_codes_usa = [210, 214, 254, 281, 325, 346, 361, 409, 430, 432, 469, 512, 682, 713, 737, 806, 817, 830, 832, 903, 915, 936, 940, 956, 972, 979]
+	utah_codes_usa = [385, 435, 801]
+	verm_codes_usa = [802]
+	virg_codes_usa = [276, 434, 540, 571, 703, 757, 804]
+	wash_codes_usa = [206, 253, 360, 425, 509]
+	wads_codes_usa = [202]
+	wvir_codes_usa = [304, 681]
+	wisc_codes_usa = [262, 414, 534, 608, 715, 920]
+	wyom_codes_usa = [307]
+	#Canada codes
+	albe_codes_canada = [403, 587, 780]
+	bcol_codes_canada = [236, 250, 604, 778]
+	mani_codes_canada = [204, 431]
+	nbru_codes_canada = [506]
+	nela_codes_canada = [709]
+	note_codes_canada = [867]
+	nosc_codes_canada = [782, 902]
+	nuna_codes_canada = [867]
+	onta_codes_canada = [226, 249, 289, 343, 365, 416, 437, 519, 613, 647, 705, 807, 905]
+	peis_codes_canada = [782, 902]
+	queb_codes_canada = [418, 438, 450, 514, 579, 581, 819, 873]
+	sask_codes_canada = [306, 639]
+	yuko_codes_canada = [867]
 	if state == "Alabama":
-		phone_first = random.choice(alab_codes)
+		phone_first = random.choice(alab_codes_usa)
 	elif state == "Alaska":
-		phone_first = random.choice(alas_codes)
+		phone_first = random.choice(alas_codes_usa)
 	elif state == "Arizona":
-		phone_first = random.choice(ariz_codes)
+		phone_first = random.choice(ariz_codes_usa)
 	elif state == "Arkansas":
-		phone_first = random.choice(arka_codes)
+		phone_first = random.choice(arka_codes_usa)
 	elif state == "California":
-		phone_first = random.choice(cali_codes)
+		phone_first = random.choice(cali_codes_usa)
 	elif state == "Colorado":
-		phone_first = random.choice(colo_codes)
+		phone_first = random.choice(colo_codes_usa)
 	elif state == "Connecticut":
-		phone_first = random.choice(conn_codes)
+		phone_first = random.choice(conn_codes_usa)
 	elif state == "Delaware":
-		phone_first = random.choice(dela_codes)
+		phone_first = random.choice(dela_codes_usa)
 	elif state == "Florida":
-		phone_first = random.choice(flor_codes)
+		phone_first = random.choice(flor_codes_usa)
 	elif state == "Georgia":
-		phone_first = random.choice(gero_codes)
+		phone_first = random.choice(gero_codes_usa)
 	elif state == "Hawaii":
-		phone_first = random.choice(hawa_codes)
+		phone_first = random.choice(hawa_codes_usa)
 	elif state == "Idaho":
-		phone_first = random.choice(idah_codes)
+		phone_first = random.choice(idah_codes_usa)
 	elif state == "Illinois":
-		phone_first = random.choice(illi_codes)
+		phone_first = random.choice(illi_codes_usa)
 	elif state == "Indiana":
-		phone_first = random.choice(indi_codes)
+		phone_first = random.choice(indi_codes_usa)
 	elif state == "Iowa":
-		phone_first = random.choice(iowa_codes)
+		phone_first = random.choice(iowa_codes_usa)
 	elif state == "Kansas":
-		phone_first = random.choice(kans_codes)
+		phone_first = random.choice(kans_codes_usa)
 	elif state == "Kentucky":
-		phone_first = random.choice(kent_codes)
+		phone_first = random.choice(kent_codes_usa)
 	elif state == "Louisiana":
-		phone_first = random.choice(loui_codes)
+		phone_first = random.choice(loui_codes_usa)
 	elif state == "Maine":
-		phone_first = random.choice(main_codes)
+		phone_first = random.choice(main_codes_usa)
 	elif state == "Maryland":
-		phone_first = random.choice(mary_codes)
+		phone_first = random.choice(mary_codes_usa)
 	elif state == "Massachusetts":
-		phone_first = random.choice(mass_codes)
+		phone_first = random.choice(mass_codes_usa)
 	elif state == "Michigan":
-		phone_first = random.choice(mich_codes)
+		phone_first = random.choice(mich_codes_usa)
 	elif state == "Minnesota":
-		phone_first = random.choice(minn_codes)
+		phone_first = random.choice(minn_codes_usa)
 	elif state == "Mississippi":
-		phone_first = random.choice(miss_codes)
+		phone_first = random.choice(miss_codes_usa)
 	elif state == "Missouri":
-		phone_first = random.choice(misso_codes)
+		phone_first = random.choice(misso_codes_usa)
 	elif state == "Montana":
-		phone_first = random.choice(mont_codes)
+		phone_first = random.choice(mont_codes_usa)
 	elif state == "Nebraska":
-		phone_first = random.choice(nebr_codes)
+		phone_first = random.choice(nebr_codes_usa)
 	elif state == "Nevada":
-		phone_first = random.choice(neva_codes)
+		phone_first = random.choice(neva_codes_usa)
 	elif state == "New Hampshire":
-		phone_first = random.choice(nham_codes)
+		phone_first = random.choice(nham_codes_usa)
 	elif state == "New Jersey":
-		phone_first = random.choice(njer_codes)
+		phone_first = random.choice(njer_codes_usa)
 	elif state == "New Mexico":
-		phone_first = random.choice(nmex_codes)
+		phone_first = random.choice(nmex_codes_usa)
 	elif state == "New York":
-		phone_first = random.choice(nyor_codes)
+		phone_first = random.choice(nyor_codes_usa)
 	elif state == "North Carolina":
-		phone_first = random.choice(ncar_codes)
+		phone_first = random.choice(ncar_codes_usa)
 	elif state == "North Dakota":
-		phone_first = random.choice(ndak_codes)
+		phone_first = random.choice(ndak_codes_usa)
 	elif state == "Ohio":
-		phone_first = random.choice(ohio_codes)
+		phone_first = random.choice(ohio_codes_usa)
 	elif state == "Oklahoma":
-		phone_first = random.choice(okla_codes)
+		phone_first = random.choice(okla_codes_usa)
 	elif state == "Oregon":
-		phone_first = random.choice(oreg_codes)
+		phone_first = random.choice(oreg_codes_usa)
 	elif state == "Pennsylvania":
-		phone_first = random.choice(penn_codes)
+		phone_first = random.choice(penn_codes_usa)
 	elif state == "Rhode Island":
-		phone_first = random.choice(risl_codes)
+		phone_first = random.choice(risl_codes_usa)
 	elif state == "South Carolina":
-		phone_first = random.choice(scar_codes)
+		phone_first = random.choice(scar_codes_usa)
 	elif state == "South Dakota":
-		phone_first = random.choice(sdak_codes)
+		phone_first = random.choice(sdak_codes_usa)
 	elif state == "Tennessee":
-		phone_first = random.choice(tenn_codes)
+		phone_first = random.choice(tenn_codes_usa)
 	elif state == "Texas":
-		phone_first = random.choice(texa_codes)
+		phone_first = random.choice(texa_codes_usa)
 	elif state == "Utah":
-		phone_first = random.choice(utah_codes)
+		phone_first = random.choice(utah_codes_usa)
 	elif state == "Vermont":
-		phone_first = random.choice(verm_codes)
+		phone_first = random.choice(verm_codes_usa)
 	elif state == "Virginia":
-		phone_first = random.choice(virg_codes)
+		phone_first = random.choice(virg_codes_usa)
 	elif state == "Washington":
-		phone_first = random.choice(wash_codes)
+		phone_first = random.choice(wash_codes_usa)
 	elif state == "Washington, DC":
-		phone_first = random.choice(wads_codes)
+		phone_first = random.choice(wads_codes_usa)
 	elif state == "West Virginia":
-		phone_first = random.choice(wvir_codes)
+		phone_first = random.choice(wvir_codes_usa)
 	elif state == "Wisconsin":
-		phone_first = random.choice(wisc_codes)
+		phone_first = random.choice(wisc_codes_usa)
 	elif state == "Wyoming":
-		phone_first = random.choice(wyom_codes)
+		phone_first = random.choice(wyom_codes_usa)
+	elif state == "Alberta":
+		phone_first = random.choice(albe_codes_canada)
+	elif state == "British Columbia":
+		phone_first = random.choice(bcol_codes_canada)
+	elif state == "Manitoba":
+		phone_first = random.choice(mani_codes_canada)
+	elif state == "New Brunswick":
+		phone_first = random.choice(nbru_codes_canada)
+	elif state == "Newfoundland and Labrador":
+		phone_first = random.choice(nela_codes_canada)
+	elif state == "Northwest Territories":
+		phone_first = random.choice(note_codes_canada)
+	elif state == "Nova Scotia":
+		phone_first = random.choice(nosc_codes_canada)
+	elif state == "Nunavut":
+		phone_first = random.choice(nuna_codes_canada)
+	elif state == "Ontario":
+		phone_first = random.choice(onta_codes_canada)
+	elif state == "Prince Edward Island":
+		phone_first = random.choice(peis_codes_canada)
+	elif state == "Quebec":
+		phone_first = random.choice(queb_codes_canada)
+	elif state == "Saskatchewan":
+		phone_first = random.choice(sask_codes_canada)
+	elif state == "Yukon":
+		phone_first = random.choice(onta_codes_canada)
 
 	else:
 		phone_first = random.randint(100,999)
