@@ -1,3 +1,4 @@
+#!/usr/bin/python2.7 
 import random
 import argparse
 import sys
@@ -59,7 +60,7 @@ def generate_name():
 	last = last.lower()
 	#Caps the first letter of each name
 	first = first[:1].upper() + first[1:]
-	last = last[:1].upper() + first[1:]
+	last = last[:1].upper() + last[1:]
 	# This if is for writing to a csv file
 	if args.o:
 		f = open(args.o,"a")
