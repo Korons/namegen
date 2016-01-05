@@ -335,7 +335,7 @@ def generate_country():
 			print country
 def creditcard():
 	if args.k == 'mastercard':
-		print mastercard[0]
+		print mastercard
 	elif args.k == 'visa16':
 		print visa16
 	elif args.k == 'visa13':
