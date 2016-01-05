@@ -1,5 +1,5 @@
 # namegen
-Generates fake data (name, username, DOB, phone number, Throw away email, country and state)
+Generates fake data (name, username, DOB, phone number, Throw away email, country and state, credit card)
 
 ### Usage 
 ```python namegen.py ```
@@ -30,14 +30,24 @@ Will write the data generated in csv format to a file named file
 
 Will generate data with a data range of 1950 to 2000
 
+```python namegen.py -k amex```
+
+Will generate data with a amex credit card number. The credit card providers you can shoose from are discover,diners, enRoute, jcb, voyager, mastercard, visa16, visa13, amex, discover, diners, enRoute, jcb, voyager
+
+
+
 ### Sample output
 
-Kirstin Hirstin  
+Regine Baum 
 
-https://mailinator.com/inbox.jsp?to=Kirstin.Hirstin  
+https://mailinator.com/inbox.jsp?to=Regine.Baum 
 
-Kirstin2L911T   
+eBaum 
 
-934 418 3290    
+1967 / 1 / 13
 
-2000 / 12 / 30USA Michigan
+Mexico QuintanaRoo
+
+826 551 9019
+
+5112305598021019
