@@ -23,6 +23,8 @@ country_file = 'countries.txt'
 usa_states_file = 'usa_states.txt'
 # All the states in canada
 canada_states_file = 'canada_states.txt'
+german_states_file = 'german_states.txt'
+mexico_states_file = 'mexico_states.txt'
 # A file of all the male names you want to choose from
 male_names = 'male-first.txt'
 # A file of all the female names you want to choose from
@@ -151,6 +153,30 @@ def generate_country():
 			print country, state
 	elif country == 'Canada':
 		with open(canada_states_file) as cs:
+			states = cs.read().splitlines()
+		state = random.choice(states)
+		if args.o:
+			f = open(args.o,"a")
+			f.write(country)
+			f.write(';')
+			f.write(state)
+			f.write(';')
+			f.write('\n')
+			f.close
+	elif country == 'Germany':
+		with open(german_states_file) as cs:
+			states = cs.read().splitlines()
+		state = random.choice(states)
+		if args.o:
+			f = open(args.o,"a")
+			f.write(country)
+			f.write(';')
+			f.write(state)
+			f.write(';')
+			f.write('\n')
+			f.close
+	elif country == 'Mexico':
+		with open(mexico_states_file) as cs:
 			states = cs.read().splitlines()
 		state = random.choice(states)
 		if args.o:
@@ -366,7 +392,7 @@ def generate_phonenum():
 	elif state == "Saskatchewan":
 		phone_first = random.choice(sask_codes_canada)
 	elif state == "Yukon":
-		phone_first = random.choice(onta_codes_canada)
+		phone_first = random.choice(yuko_codes_canada)
 
 	else:
 		phone_first = random.randint(100,999)
