@@ -1,7 +1,5 @@
 import random
-import argparse
 import sys
-import string
 from gooey import Gooey
 from gooey import GooeyParser
 
@@ -154,6 +152,30 @@ def main():
       f.write(';')
       f.write('\n')
       f.close
+  elif country == 'Germany':
+    with open(german_states_file) as cs:
+      states = cs.read().splitlines()
+    state = random.choice(states)
+    if args.o:
+      f = open(args.o,"a")
+      f.write(country)
+      f.write(';')
+      f.write(state)
+      f.write(';')
+      f.write('\n')
+      f.close
+  elif country == 'Mexico':
+    with open(mexico_states_file) as cs:
+      states = cs.read().splitlines()
+    state = random.choice(states)
+    if args.o:
+      f = open(args.o,"a")
+      f.write(country)
+      f.write(';')
+      f.write(state)
+      f.write(';')
+      f.write('\n')
+      f.close     
     else:
       print country, state
   else:
@@ -358,7 +380,7 @@ def main():
   elif state == "Saskatchewan":
     phone_first = random.choice(sask_codes_canada)
   elif state == "Yukon":
-    phone_first = random.choice(onta_codes_canada)
+    phone_first = random.choice(yuko_codes_canada)
   else:
     phone_first = random.randint(100,999)
   phone_second = random.randint(100,999)
@@ -376,4 +398,3 @@ def main():
 
 if __name__ == '__main__':
   main()
-
