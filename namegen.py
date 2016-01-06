@@ -325,6 +325,7 @@ def generate_country():
 		if args.o:
 			f = open(args.o,"a")
 			f.write(country)
+			f.write(';')
 			f.close
 		else:
 			print country
