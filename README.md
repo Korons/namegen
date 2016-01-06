@@ -51,3 +51,8 @@ Mexico QuintanaRoo
 826 551 9019
 
 5112305598021019
+
+####Warnings
+The order the data is written to csv in will change alot 
+The GUI version is going to lag behind often 1 major update
+This is in alpha this means that it is unstable 
