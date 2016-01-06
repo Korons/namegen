@@ -1,13 +1,13 @@
 Remove all code from iveygman <---- Done
 License under gpl <---- Done
 Add SSN 
-Add credit card <---- Done
+Add credit card <---- Done *Still needs to be added to gui verson 
 Add more than 1 throw away email
 Add username <---- Done
 Add output to CSV <---- Done
 Add city
 Add middle name
-Make phone number match country/state <--- USA done
+Make phone number match country/state <--- USA/Canada done
 Added looping <--- done
 Write tool to test data (make sure area code matches state and state matches country)
 The code really needs to be cleaned 
