@@ -283,7 +283,6 @@ def generate_country():
 			f.write(';')
 			f.write(state)
 			f.write(';')
-			f.write('\n')
 			f.close
 		else:
 			print country, state
@@ -297,7 +296,6 @@ def generate_country():
 			f.write(';')
 			f.write(state)
 			f.write(';')
-			f.write('\n')
 			f.close
 	elif country == 'Germany':
 		with open(german_states_file) as cs:
@@ -309,7 +307,6 @@ def generate_country():
 			f.write(';')
 			f.write(state)
 			f.write(';')
-			f.write('\n')
 			f.close
 	elif country == 'Mexico':
 		with open(mexico_states_file) as cs:
@@ -321,7 +318,6 @@ def generate_country():
 			f.write(';')
 			f.write(state)
 			f.write(';')
-			f.write('\n')
 			f.close
 		else:
 			print country, state
@@ -329,31 +325,94 @@ def generate_country():
 		if args.o:
 			f = open(args.o,"a")
 			f.write(country)
-			f.write('\n')
 			f.close
 		else:
 			print country
 def creditcard():
 	if args.k == 'mastercard':
-		print mastercard
+		if args.o:
+			f = open(args.o,"a")
+			f.write(mastercard)
+			f.write(';')
+			f.write('\n')
+			f.close
+		else:
+			print mastercard
 	elif args.k == 'visa16':
-		print visa16
+		if args.o:
+			f = open(args.o,"a")
+			f.write(visa16)
+			f.write(';')
+			f.write('\n')
+			f.close
+		else:
+			print visa16
 	elif args.k == 'visa13':
-		print visa13
+		if args.o:
+			f = open(args.o,"a")
+			f.write(visa13)
+			f.write(';')
+			f.write('\n')
+			f.close
+		else:
+			print visa13
 	elif args.k == 'amex':
-		print amex
+		if args.o:
+			f = open(args.o,"a")
+			f.write(amex)
+			f.write(';')
+			f.write('\n')
+			f.close
+		else:
+			print amex
 	elif args.k == 'discover':
-		print discover
+		if args.o:
+			f = open(args.o,"a")
+			f.write(discover)
+			f.write(';')
+			f.write('\n')
+			f.close
+		else:
+			print discover
 	elif args.k == 'diners':
-		print diners
+		if args.o:
+			f = open(args.o,"a")
+			f.write(diners)
+			f.write(';')
+			f.write('\n')
+			f.close
+		else:
+			print diners
 	elif args.k == 'enRoute':
-		print enRoute
+		if args.o:
+			f = open(args.o,"a")
+			f.write(enRoute)
+			f.write(';')
+			f.write('\n')
+			f.close
+		else:
+			print enRoute
 	elif args.k == 'jcb':
-		print jcb
+		if args.o:
+			f = open(args.o,"a")
+			f.write(jcb)
+			f.write(';')
+			f.write('\n')
+			f.close
+		else:
+			print jcb
 	elif args.k == 'voyager':
-		print voyager
+		if args.o:
+			f = open(args.o,"a")
+			f.write(voyager)
+			f.write(';')
+			f.write('\n')
+			f.close
+		else:
+			print voyager
 	else:
 		print "Error in credit card gen\nExiting"
+		sys.exit()
 # This generates the phone number
 def generate_phonenum():
 	alab_codes_usa = [205, 251, 256, 334, 938]
@@ -574,6 +633,7 @@ if args.l:
 	# we start at 1 and 0 here because we already ran once above this
 	for x in range(1, int(run_range)):
 		generate_name()
-		generate_phonenum()
 		generate_dob()
 		generate_country()
+		generate_phonenum()
+		creditcard()
