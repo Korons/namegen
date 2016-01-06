@@ -54,5 +54,7 @@ Mexico QuintanaRoo
 
 ####Warnings
 The order the data is written to csv in will change alot 
+
 The GUI version is going to lag behind often 1 major update
+
 This is in alpha this means that it is unstable 
