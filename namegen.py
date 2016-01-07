@@ -210,7 +210,8 @@ def generate_name():
 		email = base + first + "." + last
 		print email
 		# I'm using a bunch of if/elif for this because python does not have a switch statment
-		user_name_how = random.randint(1, 9)
+		user_name_how = random.randint(1, 13)
+		numbers = ['one','two','three','four','five','seven','eight','nine','ten']
 		if user_name_how == 1:
 			user_name = first[0] + last
 		elif user_name_how == 2:
@@ -232,6 +233,18 @@ def generate_name():
 			user_name = user_name.replace(" ", "")
 		elif user_name_how == 9:
 			user_name = first + randstring
+		elif user_name_how == 10:
+			first = first[:1].upper() + first[1:]
+			last = first[:1].upper() + last[1:]
+			user_name = first + last
+		elif user_name_how == 11:
+			first = first[:1].upper() + first[1:]
+			last = first[:1].upper() + last[1:]
+			user_name = first[0:2] + last[0:2]
+		elif user_name_how == 12:
+			user_name = first + random.choice(numbers)
+		elif user_name_how == 13:
+			user_name = last[3:6] + last[0:2]
 		else:
 			print "Error: Unexpected vaule in generate_name\nExiting"
 			sys.exit()
