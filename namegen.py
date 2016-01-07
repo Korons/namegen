@@ -6,6 +6,35 @@ import string
 import copy
 from random import Random
 
+#Gobal vars
+
+state = ''
+
+
+# The files with all the countries 
+country_file = 'data/countries.txt'
+# A file with all the states in the USA
+usa_states_file = 'data/usa_states.txt'
+# All the states in canada
+canada_states_file = 'data/canada_states.txt'
+german_states_file = 'data/german_states.txt'
+mexico_states_file = 'data/mexico_states.txt'
+# A file of all the male names you want to choose from
+male_names = 'data/male-first.txt'
+# A file of all the female names you want to choose from
+female_names = 'data/female-first.txt'
+# A file with all the lastnames you want to choose from
+last_names = 'data/lastnames.txt'
+
+parser = argparse.ArgumentParser(description='Generate fake data')
+parser.add_argument("-n", help="Use female names", choices=['male','female'])
+parser.add_argument("-o", help="Output to csv file")
+parser.add_argument("-c", help="Country")
+parser.add_argument("-y", help="Year range Ex 1950-1970")
+parser.add_argument("-l", help="The number of times to loop")
+parser.add_argument("-k", help="Creditcard type", choices=['mastercard','visa16','visa13','amex','discover','diners','enRoute','jcb','voyager'], default='mastercard')
+args = parser.parse_args()
+
 # Creditcard code from https://github.com/grahamking/darkcoding-credit-card
 visaPrefixList = [
         ['4', '5', '3', '9'],
@@ -135,38 +164,6 @@ diners = ''.join(diners)
 enRoute = ''.join(enRoute)
 jcb = ''.join(jcb)
 voyager = ''.join(voyager)
-
-
-
-
-parser = argparse.ArgumentParser(description='Generate fake data')
-parser.add_argument("-n", help="Use female names", choices=['male','female'])
-parser.add_argument("-o", help="Output to csv file")
-parser.add_argument("-c", help="Country")
-parser.add_argument("-y", help="Year range Ex 1950-1970")
-parser.add_argument("-l", help="The number of times to loop")
-parser.add_argument("-k", help="Creditcard type", choices=['mastercard','visa16','visa13','amex','discover','diners','enRoute','jcb','voyager'], default='mastercard')
-args = parser.parse_args()
-
-#Gobal vars
-
-state = ''
-
-
-# The files with all the countries 
-country_file = 'countries.txt'
-# A file with all the states in the USA
-usa_states_file = 'usa_states.txt'
-# All the states in canada
-canada_states_file = 'canada_states.txt'
-german_states_file = 'german_states.txt'
-mexico_states_file = 'mexico_states.txt'
-# A file of all the male names you want to choose from
-male_names = 'male-first.txt'
-# A file of all the female names you want to choose from
-female_names = 'female-first.txt'
-# A file with all the lastnames you want to choose from
-last_names = 'lastnames.txt'
 
 # This generates the name, email and username
 def generate_name():
