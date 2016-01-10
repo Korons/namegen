@@ -208,6 +208,7 @@ def generate_name():
 		print first, last
 		base = "https://mailinator.com/inbox.jsp?to="
 		email = base + first + "." + last
+		email = email.replace(' ','')
 		print email
 		# I'm using a bunch of if/elif for this because python does not have a switch statment
 		user_name_how = random.randint(1, 13)
