@@ -9,7 +9,8 @@ from random import Random
 #Gobal vars
 
 state = ''
-
+first = ''
+last = ''
 
 # The files with all the countries 
 country_file = 'data/countries.txt'
@@ -167,8 +168,8 @@ voyager = ''.join(voyager)
 
 # This generates the name, email and username
 def generate_name():
-	char_set = string.ascii_uppercase + string.digits
-	randstring = ''.join(random.sample(char_set*6, 6))
+	global first
+	global last
 	if args.n == 'female':
 		with open(female_names) as fen:
 			fn = fen.read().splitlines()
@@ -191,10 +192,14 @@ def generate_name():
 	first = random.choice(fn)
 	last = random.choice(lastname)
 	#Changes the names to lower case
+	
 	first = first.lower()
+	
 	last = last.lower()
 	#Caps the first letter of each name
+	
 	first = first[:1].upper() + first[1:]
+	
 	last = last[:1].upper() + last[1:]
 	# This if is for writing to a csv file
 	if args.o:
@@ -206,50 +211,60 @@ def generate_name():
 		f.close
 	else:
 		print first, last
-		base = "https://mailinator.com/inbox.jsp?to="
-		email = base + first + "." + last
-		email = email.replace(' ','')
-		print email
-		# I'm using a bunch of if/elif for this because python does not have a switch statment
-		user_name_how = random.randint(1, 13)
-		numbers = ['one','two','three','four','five','seven','eight','nine','ten']
-		if user_name_how == 1:
-			user_name = first[0] + last
-		elif user_name_how == 2:
-			user_name = first[0:2] + last[0:2]
-		elif user_name_how == 3:
-			user_name = first[2:5] + last[0:5]
-		elif user_name_how == 4:
-			user_name = first[1:2] + last
-		elif user_name_how == 5:
+
+
+def generate_email():
+	base = "https://mailinator.com/inbox.jsp?to="
+	email = base + first + "." + last
+	email = email.replace(' ','')
+	print email
+
+
+def generate_username():
+	global first
+	global last
+	char_set = string.ascii_uppercase + string.digits
+	randstring = ''.join(random.sample(char_set*6, 6))
+	# I'm using a bunch of if/elif for this because python does not have a switch statment
+	user_name_how = random.randint(1, 13)
+	numbers = ['one','two','three','four','five','seven','eight','nine','ten']
+	if user_name_how == 1:
+		user_name = first[0] + last
+	elif user_name_how == 2:
+		user_name = first[0:2] + last[0:2]
+	elif user_name_how == 3:
+		user_name = first[2:5] + last[0:5]
+	elif user_name_how == 4:
+		user_name = first[1:2] + last
+	elif user_name_how == 5:
 			user_name = first[0:2] + first[3:4]
-		elif user_name_how == 6:
-			user_name = last[0:2] + last[1]
-		elif user_name_how == 7:
+	elif user_name_how == 6:
+		user_name = last[0:2] + last[1]
+	elif user_name_how == 7:
 			user_name = first[2:4] + last[0:3]
-		elif user_name_how == 8:
-			numbs = random.randint(10, 100)
-			numbs = str(numbs)
-			user_name = first[0] + last + " " + numbs
-			user_name = user_name.replace(" ", "")
-		elif user_name_how == 9:
-			user_name = first + randstring
-		elif user_name_how == 10:
-			first = first[:1].upper() + first[1:]
-			last = first[:1].upper() + last[1:]
-			user_name = first + last
-		elif user_name_how == 11:
-			first = first[:1].upper() + first[1:]
-			last = first[:1].upper() + last[1:]
-			user_name = first[0:2] + last[0:2]
-		elif user_name_how == 12:
-			user_name = first + random.choice(numbers)
-		elif user_name_how == 13:
-			user_name = last[3:6] + last[0:2]
-		else:
-			print "Error: Unexpected vaule in generate_name\nExiting"
-			sys.exit()
-		print user_name
+	elif user_name_how == 8:
+		numbs = random.randint(10, 100)
+		numbs = str(numbs)
+		user_name = first[0] + last + " " + numbs
+		user_name = user_name.replace(" ", "")
+	elif user_name_how == 9:
+		user_name = first + randstring
+	elif user_name_how == 10:
+		first = first[:1].upper() + first[1:]
+		last = first[:1].upper() + last[1:]
+		user_name = first + last
+	elif user_name_how == 11:
+		first = first[:1].upper() + first[1:]
+		last = first[:1].upper() + last[1:]
+		user_name = first[0:2] + last[0:2]
+	elif user_name_how == 12:
+		user_name = first + random.choice(numbers)
+	elif user_name_how == 13:
+		user_name = last[3:6] + last[0:2]
+	else:
+		print "Error: Unexpected vaule in generate_name\nExiting"
+		sys.exit()
+	print user_name
 
 
 def generate_dob():
@@ -340,6 +355,8 @@ def generate_country():
 			f.close
 		else:
 			print country
+
+
 def creditcard():
 	if args.k == 'mastercard':
 		if args.o:
@@ -636,6 +653,8 @@ def generate_phonenum():
 		print  phone_first, phone_second, phone_third
 
 generate_name()
+generate_email()
+generate_username()
 generate_dob()
 generate_country()
 generate_phonenum()
@@ -645,6 +664,8 @@ if args.l:
 	# we start at 1 and 0 here because we already ran once above this
 	for x in range(1, int(run_range)):
 		generate_name()
+		generate_email()
+		generate_username()
 		generate_dob()
 		generate_country()
 		generate_phonenum()
