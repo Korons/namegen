@@ -12,3 +12,4 @@ Added looping <--- done
 Write tool to test data (make sure area code matches state and state matches country)
 The code really needs to be cleaned 
 use a lib to write to csv inorder to cut down on bugs
+Find bug that causing country not to print
