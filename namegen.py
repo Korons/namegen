@@ -217,7 +217,13 @@ def generate_email():
 	base = "https://mailinator.com/inbox.jsp?to="
 	email = base + first + "." + last
 	email = email.replace(' ','')
-	print email
+	if args.o:
+		f = open(args.o,"a")
+		f.write(email)
+		f.write(';')
+		f.close
+	else:
+		print email
 
 
 def generate_username():
@@ -264,7 +270,13 @@ def generate_username():
 	else:
 		print "Error: Unexpected vaule in generate_name\nExiting"
 		sys.exit()
-	print user_name
+	if args.o:
+		f = open(args.o,"a")
+		f.write(user_name)
+		f.write(';')
+		f.close
+	else:
+		print user_name
 
 
 def generate_dob():
