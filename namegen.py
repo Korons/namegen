@@ -215,7 +215,10 @@ def generate_name():
 
 def generate_email():
 	base = "https://mailinator.com/inbox.jsp?to="
-	email = base + first + "." + last
+	# This is a random choice to decide what to user to break up the username (. _ -)
+	break_up = ['.','_','-','']
+	email_what = random.randint(1, 2)
+	email = base + first + random.choice(break_up) + last
 	email = email.replace(' ','')
 	if args.o:
 		f = open(args.o,"a")
@@ -456,6 +459,7 @@ def creditcard():
 		sys.exit()
 # This generates the phone number
 def generate_phonenum():
+	# It is next to impossible to find a list of area codes by state that you can copy and paste from
 	alab_codes_usa = [205, 251, 256, 334, 938]
 	alas_codes_usa = [907]
 	ariz_codes_usa = [480, 520, 602, 623, 928]
@@ -623,6 +627,7 @@ def generate_phonenum():
 		phone_first = random.choice(wisc_codes_usa)
 	elif state == "Wyoming":
 		phone_first = random.choice(wyom_codes_usa)
+	# Canadas bit
 	elif state == "Alberta":
 		phone_first = random.choice(albe_codes_canada)
 	elif state == "British Columbia":
@@ -649,9 +654,10 @@ def generate_phonenum():
 		phone_first = random.choice(sask_codes_canada)
 	elif state == "Yukon":
 		phone_first = random.choice(yuko_codes_canada)
-
+	# If the area codes aren't programed in use random ones
 	else:
 		phone_first = random.randint(100,999)
+	# These aren't inside the else because only the area code isn't random
 	phone_second = random.randint(100,999)
 	phone_third = random.randint(1000,9999)
 	if args.o:
@@ -673,7 +679,7 @@ generate_phonenum()
 creditcard()
 if args.l:
 	run_range = args.l
-	# we start at 1 and 0 here because we already ran once above this
+	# we start at 1 and not 0 here because we already ran once above this
 	for x in range(1, int(run_range)):
 		generate_name()
 		generate_email()
