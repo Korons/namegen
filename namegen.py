@@ -28,7 +28,7 @@ female_names = 'data/female-first.txt'
 last_names = 'data/lastnames.txt'
 
 parser = argparse.ArgumentParser(description='Generate fake data')
-parser.add_argument("-n", help="Use female names", choices=['male','female'])
+parser.add_argument("-n", help="Names to use", choices=['male','female'])
 parser.add_argument("-o", help="Output to csv file")
 parser.add_argument("-c", help="Country")
 parser.add_argument("-y", help="Year range Ex 1950-1970")
